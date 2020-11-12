@@ -3,173 +3,173 @@
 [[package]]
 name = "ansi_term"
 version = "0.11.0"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "winapi 0.3.8 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "winapi 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "atty"
 version = "0.2.14"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "hermit-abi 0.1.8 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "libc 0.2.67 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "winapi 0.3.8 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "hermit-abi 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
+ "libc 0.2.74 (registry+https://github.com/rust-lang/crates.io-index)",
+ "winapi 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "bitflags"
 version = "1.2.1"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "clap"
-version = "2.33.0"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "2.33.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "ansi_term 0.11.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "atty 0.2.14 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "bitflags 1.2.1 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "strsim 0.8.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "textwrap 0.11.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "unicode-width 0.1.7 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "vec_map 0.8.1 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "ansi_term 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "atty 0.2.14 (registry+https://github.com/rust-lang/crates.io-index)",
+ "bitflags 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "strsim 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "textwrap 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "unicode-width 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)",
+ "vec_map 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "hermit-abi"
-version = "0.1.8"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "0.1.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "libc 0.2.67 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "libc 0.2.74 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "libc"
-version = "0.2.67"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "0.2.74"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "peg"
-version = "0.6.2"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "0.6.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "peg-macros 0.6.2 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "peg-runtime 0.6.2 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "peg-macros 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "peg-runtime 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "peg-macros"
-version = "0.6.2"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "0.6.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "peg-runtime 0.6.2 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "proc-macro2 1.0.9 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "quote 1.0.2 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "peg-runtime 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "proc-macro2 1.0.19 (registry+https://github.com/rust-lang/crates.io-index)",
+ "quote 1.0.7 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "peg-runtime"
-version = "0.6.2"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "0.6.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "proc-macro2"
-version = "1.0.9"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "1.0.19"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "unicode-xid 0.2.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "unicode-xid 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "quote"
-version = "1.0.2"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "1.0.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "proc-macro2 1.0.9 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "proc-macro2 1.0.19 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "regex-style"
 version = "0.1.0"
 dependencies = [
- "clap 2.33.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "peg 0.6.2 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "clap 2.33.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "peg 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "strsim"
 version = "0.8.0"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "textwrap"
 version = "0.11.0"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "unicode-width 0.1.7 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "unicode-width 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "unicode-width"
-version = "0.1.7"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "0.1.8"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "unicode-xid"
-version = "0.2.0"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "vec_map"
-version = "0.8.1"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "0.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "vim-syntax"
 version = "0.1.0"
 dependencies = [
- "peg 0.6.2 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "peg 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)",
  "regex-style 0.1.0",
 ]
 
 [[package]]
 name = "winapi"
-version = "0.3.8"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+version = "0.3.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "winapi-i686-pc-windows-gnu 0.4.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
- "winapi-x86_64-pc-windows-gnu 0.4.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)",
+ "winapi-i686-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
+ "winapi-x86_64-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
 name = "winapi-i686-pc-windows-gnu"
 version = "0.4.0"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "winapi-x86_64-pc-windows-gnu"
 version = "0.4.0"
-source = "registry+https://mirrors.ustc.edu.cn/crates.io-index/"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [metadata]
-"checksum ansi_term 0.11.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b"
-"checksum atty 0.2.14 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8"
-"checksum bitflags 1.2.1 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693"
-"checksum clap 2.33.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "5067f5bb2d80ef5d68b4c87db81601f0b75bca627bc2ef76b141d7b846a3c6d9"
-"checksum hermit-abi 0.1.8 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "1010591b26bbfe835e9faeabeb11866061cc7dcebffd56ad7d0942d0e61aefd8"
-"checksum libc 0.2.67 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "eb147597cdf94ed43ab7a9038716637d2d1bf2bc571da995d0028dec06bd3018"
-"checksum peg 0.6.2 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "9075875c14bb21f25f11cad4b6ad2e4dd443b8fb83900b2fbdd6ebd744b82e97"
-"checksum peg-macros 0.6.2 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "c24c165fd39e995246140cc78df55c56c6733ba87e6658cb3e197b8856c62852"
-"checksum peg-runtime 0.6.2 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "0c1a2897e69d986c7986747ebad425cf03746ec5e3e09bb3b2600f91301ba864"
-"checksum proc-macro2 1.0.9 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "6c09721c6781493a2a492a96b5a5bf19b65917fe6728884e7c44dd0c60ca3435"
-"checksum quote 1.0.2 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "053a8c8bcc71fcce321828dc897a98ab9760bef03a4fc36693c231e5b3216cfe"
-"checksum strsim 0.8.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "8ea5119cdb4c55b55d432abb513a0429384878c15dde60cc77b1c99de1a95a6a"
-"checksum textwrap 0.11.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "d326610f408c7a4eb6f51c37c330e496b08506c9457c9d34287ecc38809fb060"
-"checksum unicode-width 0.1.7 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "caaa9d531767d1ff2150b9332433f32a24622147e5ebb1f26409d5da67afd479"
-"checksum unicode-xid 0.2.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "826e7639553986605ec5979c7dd957c7895e93eabed50ab2ffa7f6128a75097c"
-"checksum vec_map 0.8.1 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "05c78687fb1a80548ae3250346c3db86a80a7cdd77bda190189f2d0a0987c81a"
-"checksum winapi 0.3.8 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "8093091eeb260906a183e6ae1abdba2ef5ef2257a21801128899c3fc699229c6"
-"checksum winapi-i686-pc-windows-gnu 0.4.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
-"checksum winapi-x86_64-pc-windows-gnu 0.4.0 (registry+https://mirrors.ustc.edu.cn/crates.io-index/)" = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+"checksum ansi_term 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b"
+"checksum atty 0.2.14 (registry+https://github.com/rust-lang/crates.io-index)" = "d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8"
+"checksum bitflags 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693"
+"checksum clap 2.33.1 (registry+https://github.com/rust-lang/crates.io-index)" = "bdfa80d47f954d53a35a64987ca1422f495b8d6483c0fe9f7117b36c2a792129"
+"checksum hermit-abi 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)" = "3deed196b6e7f9e44a2ae8d94225d80302d81208b1bb673fd21fe634645c85a9"
+"checksum libc 0.2.74 (registry+https://github.com/rust-lang/crates.io-index)" = "a2f02823cf78b754822df5f7f268fb59822e7296276d3e069d8e8cb26a14bd10"
+"checksum peg 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)" = "9f76678828272f177ac33b7e2ac2e3e73cc6c1cd1e3e387928aa69562fa51367"
+"checksum peg-macros 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)" = "636d60acf97633e48d266d7415a9355d4389cea327a193f87df395d88cd2b14d"
+"checksum peg-runtime 0.6.3 (registry+https://github.com/rust-lang/crates.io-index)" = "9555b1514d2d99d78150d3c799d4c357a3e2c2a8062cd108e93a06d9057629c5"
+"checksum proc-macro2 1.0.19 (registry+https://github.com/rust-lang/crates.io-index)" = "04f5f085b5d71e2188cb8271e5da0161ad52c3f227a661a3c135fdf28e258b12"
+"checksum quote 1.0.7 (registry+https://github.com/rust-lang/crates.io-index)" = "aa563d17ecb180e500da1cfd2b028310ac758de548efdd203e18f283af693f37"
+"checksum strsim 0.8.0 (registry+https://github.com/rust-lang/crates.io-index)" = "8ea5119cdb4c55b55d432abb513a0429384878c15dde60cc77b1c99de1a95a6a"
+"checksum textwrap 0.11.0 (registry+https://github.com/rust-lang/crates.io-index)" = "d326610f408c7a4eb6f51c37c330e496b08506c9457c9d34287ecc38809fb060"
+"checksum unicode-width 0.1.8 (registry+https://github.com/rust-lang/crates.io-index)" = "9337591893a19b88d8d87f2cec1e73fad5cdfd10e5a6f349f498ad6ea2ffb1e3"
+"checksum unicode-xid 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "f7fe0bb3479651439c9112f72b6c505038574c9fbb575ed1bf3b797fa39dd564"
+"checksum vec_map 0.8.2 (registry+https://github.com/rust-lang/crates.io-index)" = "f1bddf1187be692e79c5ffeab891132dfb0f236ed36a43c7ed39f1165ee20191"
+"checksum winapi 0.3.9 (registry+https://github.com/rust-lang/crates.io-index)" = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+"checksum winapi-i686-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+"checksum winapi-x86_64-pc-windows-gnu 0.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"

@@ -16,18 +16,6 @@ pub enum Converter{
     PerlConverter,
 }
 
-/*
-pub enum Convert<T:RegexConverter>{
-    X(T),
-}
-
-fn test(){
-    let mut z = Convert::X(EmcaConverter{ verbose: true});
-    z = Convert::X(EmcaConverter{ verbose: false});
-    // z = Convert::X(PerlConverter);
-}
-*/
-
 impl RegexConverter for EmcaConverter {
     fn process_branches(&self, branches: Vec<String>) -> String{
         let ret = branches.join(" | ");
@@ -75,23 +63,9 @@ impl RegexConverter for Converter {
 
 pub static mut CONVERTER: Converter = Converter::EmcaConverter;
 
-// pub static mut C2: &RegexConverter = &EmcaConverter{ verbose: true } as &RegexConverter;
-
 struct Holder<T: RegexConverter>{
     pub data: T,
 }
-
-fn test<T: RegexConverter>(x: &T){
-    let y = x;
-}
-
-#[test]
-fn testA(){
-    test(&EmcaConverter{ verbose: true });
-    test(&PerlConverter);
-}
-
-// static mut holder: Holder<EmcaConverter> = Holder{ data: EmcaConverter{ verbose: true } };
 
 trait HolderX<T: RegexConverter> {
     fn set_converter(t: &T) -> Holder<T>;
@@ -99,7 +73,6 @@ trait HolderX<T: RegexConverter> {
     fn get_converter(&self);
 }
 
-// peg::parser!{
 parser!{
     pub grammar vim_regex() for str { //c: &Converter
 
@@ -189,67 +162,3 @@ parser!{
     }
 }
 
-mod test{
-    use super::parser;
-
-    #[test]
-    fn test_vim_regex_pattern(){
-        vim_regex::pattern(r"abc \| abc").unwrap();
-        vim_regex::pattern(r"abc \& abc").unwrap();
-        vim_regex::pattern(r"[abc]*").unwrap();
-    }
-
-    #[test]
-    fn test_vim_regex_piece(){
-        vim_regex::piece(r"[abc]*").unwrap();
-    }
-
-    #[test]
-    fn test_vim_regex_multi(){
-        vim_regex::multi(r"*").unwrap();
-        vim_regex::multi(r"\+").unwrap();
-        vim_regex::multi(r"\?").unwrap();
-        vim_regex::multi(r"\=").unwrap();
-        vim_regex::multi(r"\@=").unwrap();
-        vim_regex::multi(r"\@!").unwrap();
-        vim_regex::multi(r"\@<=").unwrap();
-        vim_regex::multi(r"\@<!").unwrap();
-        vim_regex::multi(r"\@1<=").unwrap();
-        vim_regex::multi(r"\@123<!").unwrap();
-        vim_regex::multi(r"\@4<=").unwrap();
-        vim_regex::multi(r"\@555555<!").unwrap();
-        vim_regex::multi(r"\@>").unwrap();
-        vim_regex::multi(r"\{1,6}").unwrap();
-        vim_regex::multi(r"\{1,}").unwrap();
-        vim_regex::multi(r"\{,6}").unwrap();
-        vim_regex::multi(r"\{16}").unwrap();
-        vim_regex::multi(r"\{1}").unwrap();
-        vim_regex::multi(r"\{6}").unwrap();
-        vim_regex::multi(r"\{16}").unwrap();
-        vim_regex::multi(r"\{-1,6}").unwrap();
-        vim_regex::multi(r"\{-1,}").unwrap();
-        vim_regex::multi(r"\{-,6}").unwrap();
-        vim_regex::multi(r"\{-16}").unwrap();
-        vim_regex::multi(r"\{-1}").unwrap();
-        vim_regex::multi(r"\{-6}").unwrap();
-        vim_regex::multi(r"\{-16}").unwrap();
-        vim_regex::multi(r"\{-}").unwrap();
-        vim_regex::multi(r"\{}").unwrap();
-    }
-
-    #[test]
-    fn test_vim_regex_special_char_remainder(){
-        vim_regex::special_char_remainder(r"[abc]").unwrap();
-    }
-
-    parser!{
-        pub grammar ccc() for str {
-            pub rule start() -> () = "b" / "a" ** " " {}
-        }
-    }
-    #[test]
-    fn test_peg(){
-        ccc::start("a a").unwrap();
-        ccc::start("b").unwrap();
-    }
-}
