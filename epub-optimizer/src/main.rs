@@ -6,8 +6,7 @@ extern crate zip;
 extern crate epub;
 
 use clap::App;
-use clap::{Arg, SubCommand};
-use std::fs;
+use clap::Arg;
 
 mod optimize;
 mod utils;

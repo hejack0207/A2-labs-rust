@@ -1,16 +1,5 @@
 use clap::{App, Arg, SubCommand, ArgMatches, Values};
-use std::collections::HashMap;
-use std::fs;
-use std::fs::File;
-use std::io;
-use std::io::Read;
-use std::io::Write;
-use std::process::Command;
-use std::path::Path;
-use walkdir::WalkDir;
 // use epub::doc::EpubDoc;
-
-use utils::{unzip, gen_epub};
 
 pub fn subcommand() -> App<'static, 'static> {
     SubCommand::with_name("check")
