@@ -4,8 +4,11 @@ extern crate num_format;
 use num_format::{Locale, ToFormattedString};
 
 mod files;
-use files::get_files;
 mod counting;
+
+use std::cmp;
+
+use files::get_files;
 use counting::{Stats, Counter, get_counters, get_stats};
 
 fn main() {
@@ -71,7 +74,8 @@ fn show_stats(stats: &Stats) {
 fn show_counters(counters: &Vec<Counter>, num: usize) {
     let len = counters.len();
 
-    let max = if len < num { len } else { num };
+    // let max = if len < num { len } else { num };
+    let max = cmp::max(len, num);
 
     if max > 0 {
         println!("{} biggest files:", max);
