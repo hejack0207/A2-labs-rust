@@ -1,5 +1,14 @@
-* [linux-kernel-module-rust](https://github.com/fishinabarrel/linux-kernel-module-rust)
+# project
+* [stratovirt](https://github.com/openeuler-mirror/stratovirt)
+
+# tools
 * [rust-ptrace](https://github.com/codius-deprecated/rust-ptrace)
+
+# doc
+* [book](https://github.com/rust-lang/book)
+* [reference](https://github.com/rust-lang/reference)
+* [std-dev-guide](https://github.com/rust-lang/std-dev-guide)
+* [rfcs](https://github.com/rust-lang/rfcs)
 
 # awesome
 * [awesome-rust](https://github.com/rust-unofficial/awesome-rust)

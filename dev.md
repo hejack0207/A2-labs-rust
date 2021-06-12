@@ -8,12 +8,12 @@
 * [cargo-script](https://github.com/DanielKeep/cargo-script)
 
 # rust doc
-* [std-dev-guide](https://github.com/rust-lang/std-dev-guide)
-* [rust-by-example](https://github.com/rust-lang/rust-by-example)
-* [reference](https://github.com/rust-lang/reference)
-* [rfcs](https://github.com/rust-lang/rfcs)
-* [edition-guide](https://github.com/rust-lang/edition-guide)
 * [book](https://github.com/rust-lang/book)
+* [reference](https://github.com/rust-lang/reference)
+* [std-dev-guide](https://github.com/rust-lang/std-dev-guide)
+* [rfcs](https://github.com/rust-lang/rfcs)
+* [rust-by-example](https://github.com/rust-lang/rust-by-example)
+* [edition-guide](https://github.com/rust-lang/edition-guide)
 * [async-book](https://github.com/rust-lang/async-book)
 
 # awesome
