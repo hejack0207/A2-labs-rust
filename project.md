@@ -6,3 +6,6 @@
 # infra
 * [indradb](https://github.com/indradb/indradb)
 * [tikv](https://github.com/tikv/tikv)
+
+# tools
+* [tantivy-cli](https://github.com/tantivy-search/tantivy-cli)
