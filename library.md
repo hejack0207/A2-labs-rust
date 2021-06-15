@@ -15,6 +15,11 @@
 * [kvm-bindings](https://github.com/rust-vmm/kvm-bindings)
 * [kvm-ioctls](https://github.com/rust-vmm/kvm-ioctls)
 
+# networking
+* [quiche](https://github.com/cloudflare/quiche)
+* [rust-dpdk](https://github.com/libpnet/rust-dpdk)
+* [capsule](https://github.com/capsule-rs/capsule)
+
 # storage
 * [qcow2-rs](https://github.com/vasi/qcow2-rs)
 * [qcow2-fuse](https://github.com/vasi/qcow2-fuse)
