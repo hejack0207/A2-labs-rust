@@ -1,8 +1,8 @@
 # project
 * [stratovirt](https://github.com/openeuler-mirror/stratovirt)
 
-# tools
-* [rust-ptrace](https://github.com/codius-deprecated/rust-ptrace)
+# library
+* [paxos](https://github.com/nwtnni/paxos)
 
 # doc
 * [book](https://github.com/rust-lang/book)

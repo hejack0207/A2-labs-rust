@@ -9,6 +9,7 @@
 
 # kernel
 * [netlink:rs](https://github.com/little-dude/netlink)
+* [rust-ptrace](https://github.com/codius-deprecated/rust-ptrace)
 
 # virt
 * [vmm-sys-util](https://github.com/rust-vmm/vmm-sys-util)
