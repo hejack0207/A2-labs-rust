@@ -4,8 +4,9 @@
 # library
 * [paxos](https://github.com/nwtnni/paxos)
 
-# doc
-* [book](https://github.com/rust-lang/book)
+# language
+* [rust](https://github.com/rust-lang/rust)
+* [rulst-lang-book](https://github.com/rust-lang/book)
 * [reference](https://github.com/rust-lang/reference)
 * [std-dev-guide](https://github.com/rust-lang/std-dev-guide)
 * [rfcs](https://github.com/rust-lang/rfcs)
