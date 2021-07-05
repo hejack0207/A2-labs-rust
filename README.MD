@@ -1,8 +1,10 @@
 # project
 * [stratovirt](https://github.com/openeuler-mirror/stratovirt)
+* [toydb](https://github.com/erikgrinaker/toydb)
 
-# library
+# algorithm
 * [paxos](https://github.com/nwtnni/paxos)
+* [leetcode-rust](https://github.com/aylei/leetcode-rust)
 
 # language
 * [rust](https://github.com/rust-lang/rust)
