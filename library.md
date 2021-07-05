@@ -24,17 +24,3 @@
 # storage
 * [qcow2-rs](https://github.com/vasi/qcow2-rs)
 * [qcow2-fuse](https://github.com/vasi/qcow2-fuse)
-
-# consensus
-* [consensus-rs](https://github.com/laohanlinux/consensus-rs)
-
-## paxos
-* [paxos](https://github.com/nwtnni/paxos)
-* [paxos](https://github.com/spacejam/paxos)
-* [epaxos](https://github.com/pisimulation/epaxos)
-* [paxos-s](https://github.com/zowens/paxos-rs)
-
-## raft
-* [raft-rs](https://github.com/tikv/raft-rs)
-* [async-raft](https://github.com/async-raft/async-raft)
-
