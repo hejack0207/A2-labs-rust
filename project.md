@@ -1,3 +1,6 @@
+# kernel
+* [rust-for-linux](https://github.com/Rust-for-Linux/linux)
+
 # iaas
 * [redox](https://github.com/redox-os/redox)
 * [redox-book](https://github.com/redox-os/book)
