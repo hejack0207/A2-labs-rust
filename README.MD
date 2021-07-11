@@ -1,4 +1,5 @@
 # project
+* [rust-for-linux](https://github.com/Rust-for-Linux/linux)
 * [stratovirt](https://github.com/openeuler-mirror/stratovirt)
 * [toydb](https://github.com/erikgrinaker/toydb)
 
