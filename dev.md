@@ -8,6 +8,8 @@
 
 ## script
 * [cargo-script](https://github.com/DanielKeep/cargo-script)
+* [runner](https://github.com/stevedonovan/runner)
+* [rust-script](https://github.com/fornwall/rust-script)
 
 ## repl
 * [irust](https://github.com/sigmaSd/IRust)
