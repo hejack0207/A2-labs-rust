@@ -1,13 +1,21 @@
 # language supports
 * [rust](https://github.com/rust-lang/rust)
+
+## builder
 * [rust-clippy](https://github.com/rust-lang/rust-clippy)
 * [rustup](https://github.com/rust-lang/rustup)
-* [rls](https://github.com/rust-lang/rls)
 * [cargo](https://github.com/rust-lang/cargo)
 * [cargo-edit](https://github.com/killercup/cargo-edit)
 * [cargo-script](https://github.com/DanielKeep/cargo-script)
 
-# rust doc
+## editor
+* [rls](https://github.com/rust-lang/rls)
+
+## repl
+* [irust](https://github.com/sigmaSd/IRust)
+* [papyrus](https://github.com/kurtlawrence/papyrus)
+
+## documentation
 * [book](https://github.com/rust-lang/book)
 * [reference](https://github.com/rust-lang/reference)
 * [std-dev-guide](https://github.com/rust-lang/std-dev-guide)
