@@ -14,6 +14,9 @@
 * [std-dev-guide](https://github.com/rust-lang/std-dev-guide)
 * [rfcs](https://github.com/rust-lang/rfcs)
 
+# dev
+* [rustup](https://github.com/rust-lang/rustup)
+
 # awesome
 * [awesome-rust](https://github.com/rust-unofficial/awesome-rust)
 * [awesome-rust-cn](https://github.com/rustcc/awesome-rust)
