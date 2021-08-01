@@ -34,3 +34,6 @@
 * [awesome-rust](https://github.com/rust-unofficial/awesome-rust)
 * [awesome-rust-cn](https://github.com/rustcc/awesome-rust)
 * [awesome-rust-blockchain](https://github.com/rust-in-blockchain/awesome-blockchain-rust)
+
+* [delta](https://github.com/dandavison/delta)
+* [gitui](https://github.com/extrawurst/gitui)

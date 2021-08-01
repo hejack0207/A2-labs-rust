@@ -1,11 +1,21 @@
 # kernel
 * [rust-for-linux](https://github.com/Rust-for-Linux/linux)
+* [redox-kernel](https://github.com/redox-os/kernel)
+* [rusty-hermit](https://github.com/hermitcore/rusty-hermit)
 
 # iaas
 * [redox](https://github.com/redox-os/redox)
 * [redox-book](https://github.com/redox-os/book)
 * [redox_docker](https://github.com/thiswind/redox_docker)
 * [stratovirt](https://github.com/openeuler-mirror/stratovirt)
+* [firecracker](https://github.com/firecracker-microvm/firecracker)
+* [cloud-hypervisor](https://github.com/cloud-hypervisor/cloud-hypervisor)
+* [railcar](https://github.com/oracle/railcar)
+* [quark](https://github.com/QuarkContainer/Quark)
+* [bottlerocket](https://github.com/bottlerocket-os/bottlerocket)
+
+## net
+* [smoltcp](https://github.com/smoltcp-rs/smoltcp)
 
 # relational db
 * [toydb](https://github.com/erikgrinaker/toydb)
@@ -15,10 +25,12 @@
 
 # kv database
 * [tikv](https://github.com/tikv/tikv)
+* [sled](https://github.com/spacejam/sled)
 
 # graph database
 * [oxigraph](https://github.com/oxigraph/oxigraph)
 * [indradb](https://github.com/indradb/indradb)
+* [indradb-postgres](https://github.com/indradb/postgres)
 * [shelfdb](https://github.com/Joatin/shelfdb)
 
 # document db
