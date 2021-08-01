@@ -21,6 +21,10 @@
 ## editor
 * [rls](https://github.com/rust-lang/rls)
 
+## version control
+* [delta](https://github.com/dandavison/delta)
+* [gitui](https://github.com/extrawurst/gitui)
+
 ## documentation
 * [book](https://github.com/rust-lang/book)
 * [reference](https://github.com/rust-lang/reference)
@@ -34,6 +38,3 @@
 * [awesome-rust](https://github.com/rust-unofficial/awesome-rust)
 * [awesome-rust-cn](https://github.com/rustcc/awesome-rust)
 * [awesome-rust-blockchain](https://github.com/rust-in-blockchain/awesome-blockchain-rust)
-
-* [delta](https://github.com/dandavison/delta)
-* [gitui](https://github.com/extrawurst/gitui)
