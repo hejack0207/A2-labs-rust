@@ -2,6 +2,7 @@
 * [rust-for-linux](https://github.com/Rust-for-Linux/linux)
 * [redox-kernel](https://github.com/redox-os/kernel)
 * [rusty-hermit](https://github.com/hermitcore/rusty-hermit)
+* [redbpf](https://github.com/foniod/redbpf)
 
 # iaas
 * [redox](https://github.com/redox-os/redox)
