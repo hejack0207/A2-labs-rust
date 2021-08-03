@@ -28,5 +28,8 @@
 # browser
 * [rust-headless-chrome](https://github.com/atroche/rust-headless-chrome)
 
+# server
+* [http-server](https://github.com/EstebanBorai/http-server)
+
 # win
 * [alacritty](https://github.com/alacritty/alacritty)

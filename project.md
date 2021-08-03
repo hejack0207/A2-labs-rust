@@ -3,6 +3,7 @@
 * [redox-kernel](https://github.com/redox-os/kernel)
 * [rusty-hermit](https://github.com/hermitcore/rusty-hermit)
 * [redbpf](https://github.com/foniod/redbpf)
+* [opensnoop-native](https://github.com/bolinfest/opensnoop-native)
 
 # iaas
 * [redox](https://github.com/redox-os/redox)

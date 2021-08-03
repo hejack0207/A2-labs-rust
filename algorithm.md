@@ -1,6 +1,9 @@
 # leetcode
 * [leetcode-rust](https://github.com/aylei/leetcode-rust)
 
+# graph
+* [petgraph](https://github.com/petgraph/petgraph)
+
 # consensus
 * [consensus-rs](https://github.com/laohanlinux/consensus-rs)
 

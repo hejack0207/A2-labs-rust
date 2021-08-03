@@ -15,8 +15,16 @@
 * [irust](https://github.com/sigmaSd/IRust)
 * [papyrus](https://github.com/kurtlawrence/papyrus)
 
+## debug
+* [rdbg](https://github.com/starfleetcadet75/rdbg)
+* [rd](https://github.com/sidkshatriya/rd)
+
+## trace
+* [rust-ustd](https://github.com/Fiedzia/rust-ustd)
+
 ## code tool
 * [rust-clippy](https://github.com/rust-lang/rust-clippy)
+* [docco](https://github.com/Seasquash/docco)
 
 ## editor
 * [rls](https://github.com/rust-lang/rls)
