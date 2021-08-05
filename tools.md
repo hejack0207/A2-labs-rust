@@ -25,6 +25,10 @@
 * [filterless](https://github.com/wilsoniya/filterless)
 * [bat](https://github.com/sharkdp/bat)
 
+# version control
+* [delta](https://github.com/dandavison/delta)
+* [gitui](https://github.com/extrawurst/gitui)
+
 # browser
 * [rust-headless-chrome](https://github.com/atroche/rust-headless-chrome)
 
