@@ -18,6 +18,7 @@
 
 ## net
 * [smoltcp](https://github.com/smoltcp-rs/smoltcp)
+* [rVRRPd](https://github.com/e3prom/rVRRPd)
 
 # relational db
 * [toydb](https://github.com/erikgrinaker/toydb)
