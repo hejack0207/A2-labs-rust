@@ -1,3 +1,3 @@
 [workspace]
-members = ["codes/epub-optimizer","codes/regex-parser","codes/vimscript-parser"]
+members = ["crates/epub-optimizer","crates/regex-parser","crates/vimscript-parser"]
 exclude = []
