@@ -29,10 +29,6 @@
 ## editor
 * [rls](https://github.com/rust-lang/rls)
 
-## version control
-* [delta](https://github.com/dandavison/delta)
-* [gitui](https://github.com/extrawurst/gitui)
-
 ## documentation
 * [book](https://github.com/rust-lang/book)
 * [reference](https://github.com/rust-lang/reference)

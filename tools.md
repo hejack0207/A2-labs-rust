@@ -1,5 +1,6 @@
 # doc tool
 * [mdbook-epub](https://github.com/Michael-F-Bryan/mdbook-epub)
+* [crownbook](https://github.com/lise-henry/crownbook)
 
 # system
 * [tmux-thumbs](https://github.com/fcsonline/tmux-thumbs)
@@ -24,6 +25,10 @@
 * [least](https://github.com/ddigeronimo/least)
 * [filterless](https://github.com/wilsoniya/filterless)
 * [bat](https://github.com/sharkdp/bat)
+
+# version control
+* [delta](https://github.com/dandavison/delta)
+* [gitui](https://github.com/extrawurst/gitui)
 
 # browser
 * [rust-headless-chrome](https://github.com/atroche/rust-headless-chrome)
