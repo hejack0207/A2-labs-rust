@@ -1,0 +1,3 @@
+[workspace]
+members = ["codes/epub-optimizer/","codes/parser-utils/"]
+exclude = []
