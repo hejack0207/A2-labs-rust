@@ -1,4 +1,0 @@
-*.iso
-Cargo.lock
-target
-test
