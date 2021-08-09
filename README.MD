@@ -5,6 +5,7 @@
 
 # algorithm
 * [paxos](https://github.com/nwtnni/paxos)
+* [raft-rs](https://github.com/tikv/raft-rs)
 * [leetcode-rust](https://github.com/aylei/leetcode-rust)
 
 # language
@@ -16,6 +17,7 @@
 
 # dev
 * [rustup](https://github.com/rust-lang/rustup)
+* [rust-script](https://github.com/fornwall/rust-script)
 
 # awesome
 * [awesome-rust](https://github.com/rust-unofficial/awesome-rust)
