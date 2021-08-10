@@ -28,6 +28,7 @@
 
 ## editor
 * [rls](https://github.com/rust-lang/rls)
+* [LanguageClient-neovim](https://github.com/autozimu/LanguageClient-neovim)
 
 ## documentation
 * [book](https://github.com/rust-lang/book)
