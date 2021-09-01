@@ -1,2 +1,8 @@
+# virt
+* [stratovirt](https://github.com/openeuler-mirror/stratovirt)
+* [vmm-sys-util](https://github.com/rust-vmm/vmm-sys-util)
+* [kvm-bindings](https://github.com/rust-vmm/kvm-bindings)
+* [kvm-ioctls](https://github.com/rust-vmm/kvm-ioctls)
+
 # vim plugin
 * [vim-padre](https://github.com/strottos/vim-padre)
