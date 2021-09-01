@@ -1,6 +1,9 @@
 # leetcode
 * [leetcode-rust](https://github.com/aylei/leetcode-rust)
 
+# data structure
+* [rust_rb_tree](https://github.com/GabeVillalobos/rust_rb_tree)
+
 # graph
 * [petgraph](https://github.com/petgraph/petgraph)
 
