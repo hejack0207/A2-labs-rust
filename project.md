@@ -4,6 +4,7 @@
 * [rusty-hermit](https://github.com/hermitcore/rusty-hermit)
 * [redbpf](https://github.com/foniod/redbpf)
 * [opensnoop-native](https://github.com/bolinfest/opensnoop-native)
+* [mdevctl](https://github.com/mdevctl/mdevctl)
 
 # iaas
 * [redox](https://github.com/redox-os/redox)
@@ -48,6 +49,12 @@
 # timeseries db
 * [sonnerie](https://github.com/njaard/sonnerie)
 * [datafuse](https://github.com/datafuselabs/datafuse)
+
+# storage
+* [datenlord](https://github.com/datenlord/datenlord)
+
+# message queue
+* [rmqtt](https://github.com/rmqtt/rmqtt)
 
 # database
 * [zx](https://github.com/humble-tools/zx)

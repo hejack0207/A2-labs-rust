@@ -6,3 +6,6 @@
 
 # vim plugin
 * [vim-padre](https://github.com/strottos/vim-padre)
+
+# wasm
+* [ms-backend-wasm](https://github.com/leonwanghui/ms-backend-wasm)
