@@ -21,6 +21,7 @@
 
 ## trace
 * [rust-ustd](https://github.com/Fiedzia/rust-ustd)
+* [tracers](https://github.com/anelson/tracers)
 
 ## code tool
 * [rust-clippy](https://github.com/rust-lang/rust-clippy)
