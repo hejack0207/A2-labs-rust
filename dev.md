@@ -18,6 +18,7 @@
 ## debug
 * [rdbg](https://github.com/starfleetcadet75/rdbg)
 * [rd](https://github.com/sidkshatriya/rd)
+* [firedbg.for.rust](https://github.com/SeaQL/FireDBG.for.Rust)
 
 ## trace
 * [rust-ustd](https://github.com/Fiedzia/rust-ustd)
