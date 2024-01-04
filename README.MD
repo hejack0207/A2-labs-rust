@@ -6,8 +6,11 @@
 * [rfcs](https://github.com/rust-lang/rfcs)
 
 # project
-* [rust-for-linux](https://github.com/Rust-for-Linux/linux)
 * [stratovirt](https://github.com/openeuler-mirror/stratovirt)
+* [kata-containers](https://github.com/kata-containers/kata-containers)
+* [rust-for-linux](https://github.com/Rust-for-Linux/linux)
+
+# infra
 * [toydb](https://github.com/erikgrinaker/toydb)
 
 # algorithm
