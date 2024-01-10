@@ -3,6 +3,9 @@
 * [rust-ptrace](https://github.com/codius-deprecated/rust-ptrace)
 
 # networking
+* [rust-elf](https://github.com/cole14/rust-elf)
+
+# networking
 * [quiche](https://github.com/cloudflare/quiche)
 * [rust-dpdk](https://github.com/libpnet/rust-dpdk)
 * [capsule](https://github.com/capsule-rs/capsule)
