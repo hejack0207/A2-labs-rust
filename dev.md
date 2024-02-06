@@ -27,6 +27,7 @@
 ## code tool
 * [rust-clippy](https://github.com/rust-lang/rust-clippy)
 * [docco](https://github.com/Seasquash/docco)
+* [ttags](https://github.com/npezza93/ttags)
 
 ## editor
 * [rls](https://github.com/rust-lang/rls)
