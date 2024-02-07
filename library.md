@@ -2,7 +2,7 @@
 * [netlink](https://github.com/little-dude/netlink)
 * [rust-ptrace](https://github.com/codius-deprecated/rust-ptrace)
 
-# networking
+# elf
 * [rust-elf](https://github.com/cole14/rust-elf)
 
 # networking
@@ -13,6 +13,9 @@
 # storage
 * [qcow2-rs](https://github.com/vasi/qcow2-rs)
 * [qcow2-fuse](https://github.com/vasi/qcow2-fuse)
+
+# file parser
+* [makefile-lossless](https://github.com/jelmer/makefile-lossless)
 
 # basic
 * [clap](https://github.com/clap-rs/clap)
