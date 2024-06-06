@@ -34,6 +34,9 @@
 * [LanguageClient-neovim](https://github.com/autozimu/LanguageClient-neovim)
 * [rust.vim](https://github.com/rust-lang/rust.vim)
 
+## doc tool
+* [rusty-man](https://github.com/yasuo-ozu/rusty-man)
+
 ## documentation
 * [book](https://github.com/rust-lang/book)
 * [reference](https://github.com/rust-lang/reference)
