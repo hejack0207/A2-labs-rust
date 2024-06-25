@@ -29,3 +29,9 @@
 * [rustbox](https://github.com/gchp/rustbox)
 * [indicatif](https://github.com/mitsuhiko/indicatif)
 
+# web
+* [axum](https://github.com/tokio-rs/axum)
+
+# kafka
+* [kafka-rust](https://github.com/kafka-rust/kafka-rust)
+* [rust-rdkafka](https://github.com/fede1024/rust-rdkafka)
