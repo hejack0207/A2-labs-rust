@@ -35,3 +35,7 @@
 # kafka
 * [kafka-rust](https://github.com/kafka-rust/kafka-rust)
 * [rust-rdkafka](https://github.com/fede1024/rust-rdkafka)
+
+# usb
+* [libusb-rs](https://github.com/dcuddeback/libusb-rs)
+* [libusb-sys](https://github.com/dcuddeback/libusb-sys)
