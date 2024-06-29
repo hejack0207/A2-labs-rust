@@ -1,5 +1,12 @@
+# kernel
+* [rust-e1000-driver](https://github.com/lispking/rust-e1000-driver)
+* [rust-out-of-tree-module](https://github.com/Rust-for-Linux/rust-out-of-tree-module)
+
 # bpf
 * [libbpf-rs](https://github.com/libbpf/libbpf-rs)
+* [aya](https://github.com/aya-rs/aya)
+* [book](https://github.com/aya-rs/book)
+* [awesome-aya](https://github.com/aya-rs/awesome-aya)
 
 # virt
 * [stratovirt](https://github.com/openeuler-mirror/stratovirt)

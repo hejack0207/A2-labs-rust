@@ -25,6 +25,7 @@
 * [tracers](https://github.com/anelson/tracers)
 
 ## code tool
+* [rust-bindgen](https://github.com/rust-lang/rust-bindgen)
 * [rust-clippy](https://github.com/rust-lang/rust-clippy)
 * [docco](https://github.com/Seasquash/docco)
 * [ttags](https://github.com/npezza93/ttags)
