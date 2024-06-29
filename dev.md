@@ -18,6 +18,7 @@
 ## debug
 * [rdbg](https://github.com/starfleetcadet75/rdbg)
 * [rd](https://github.com/sidkshatriya/rd)
+* [stack-graphs](https://github.com/github/stack-graphs)
 * [firedbg.for.rust](https://github.com/SeaQL/FireDBG.for.Rust)
 
 ## trace
@@ -25,10 +26,10 @@
 * [tracers](https://github.com/anelson/tracers)
 
 ## code tool
-* [rust-bindgen](https://github.com/rust-lang/rust-bindgen)
 * [rust-clippy](https://github.com/rust-lang/rust-clippy)
 * [docco](https://github.com/Seasquash/docco)
 * [ttags](https://github.com/npezza93/ttags)
+* [rust-bindgen](https://github.com/rust-lang/rust-bindgen)
 
 ## editor
 * [rls](https://github.com/rust-lang/rls)
