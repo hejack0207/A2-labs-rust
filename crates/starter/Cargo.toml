@@ -1,0 +1,8 @@
+[package]
+name = "starter"
+version = "0.1.0"
+authors = ["hejack <hejack0207@sina.com>"]
+edition = "2018"
+
+[dependencies]
+error-chain = "*"
