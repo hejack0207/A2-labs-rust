@@ -3,6 +3,7 @@
 * [rust-out-of-tree-module](https://github.com/Rust-for-Linux/rust-out-of-tree-module)
 
 # bpf
+* [libbpf-sys](https://github.com/libbpf/libbpf-sys)
 * [libbpf-rs](https://github.com/libbpf/libbpf-rs)
 * [aya](https://github.com/aya-rs/aya)
 * [book](https://github.com/aya-rs/book)
