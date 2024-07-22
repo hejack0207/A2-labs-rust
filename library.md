@@ -29,6 +29,9 @@
 * [rustbox](https://github.com/gchp/rustbox)
 * [indicatif](https://github.com/mitsuhiko/indicatif)
 
+# commons
+* [log](https://github.com/rust-lang/log)
+
 # web
 * [axum](https://github.com/tokio-rs/axum)
 
