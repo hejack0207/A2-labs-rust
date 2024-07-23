@@ -31,6 +31,7 @@
 
 # commons
 * [log](https://github.com/rust-lang/log)
+* [env_logger](https://github.com/rust-cli/env_logger)
 
 # web
 * [axum](https://github.com/tokio-rs/axum)
