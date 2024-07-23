@@ -2,6 +2,7 @@
 members = [
   "vmlinux",
   "runqslower",
+  "execsnoop",
 ]
 
 resolver = "2"

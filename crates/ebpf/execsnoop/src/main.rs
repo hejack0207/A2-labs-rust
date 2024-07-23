@@ -14,33 +14,36 @@ use plain::Plain;
 use time::macros::format_description;
 use time::OffsetDateTime;
 
-mod runqslower {
+mod execsnoop {
     include!(concat!(
         env!("CARGO_MANIFEST_DIR"),
-        "/src/bpf/runqslower.skel.rs"
+        "/src/bpf/execsnoop.skel.rs"
     ));
 }
 
-use runqslower::*;
+use execsnoop::*;
 
-/// Trace high run queue latency
+/// Trace exec syscalls
 #[derive(Debug, Parser)]
 struct Command {
-    /// Trace latency higher than this value
-    #[arg(default_value = "10000")]
-    latency: u64,
-    /// Process PID to trace
+    // Trace process in cgroup path
+    #[arg(default_value = false)]
+    filter_cg: bool,
+    // include failed exec()s
+    #[arg(default_value = false)]
+    ignore_failed: bool,
+    // trace this UID only
     #[arg(default_value = "0")]
-    pid: i32,
-    /// Thread TID to trace
-    #[arg(default_value = "0")]
-    tid: i32,
+    targ_uid: u32,
+    // maximum number of arguments parsed and displayed, defaults to 20
+    #[arg(default_value = 20)]
+    max_args: i32,
     /// Verbose debug output
     #[arg(short, long)]
     verbose: bool,
 }
 
-unsafe impl Plain for runqslower_types::event {}
+unsafe impl Plain for execsnoop_types::event {}
 
 fn bump_memlock_rlimit() -> Result<()> {
     let rlimit = libc::rlimit {
@@ -56,7 +59,7 @@ fn bump_memlock_rlimit() -> Result<()> {
 }
 
 fn handle_event(_cpu: i32, data: &[u8]) {
-    let mut event = runqslower_types::event::default();
+    let mut event = execsnoop::event::default();
     plain::copy_from_bytes(&mut event, data).expect("Data buffer was too short");
 
     let now = if let Ok(now) = OffsetDateTime::now_local() {
@@ -85,7 +88,7 @@ fn handle_lost_events(cpu: i32, count: u64) {
 fn main() -> Result<()> {
     let opts = Command::parse();
 
-    let mut skel_builder = RunqslowerSkelBuilder::default();
+    let mut skel_builder = ExecsnoopSkelBuilder::default();
     if opts.verbose {
         skel_builder.obj_builder.debug(true);
     }
@@ -94,9 +97,10 @@ fn main() -> Result<()> {
     let mut open_skel = skel_builder.open()?;
 
     // Write arguments into prog
-    open_skel.rodata_mut().min_us = opts.latency;
-    open_skel.rodata_mut().targ_pid = opts.pid;
-    open_skel.rodata_mut().targ_tgid = opts.tid;
+    open_skel.rodata_mut().filter_cg = opts.filter_cg;
+    open_skel.rodata_mut().targ_uid = opts.targ_uid;
+    open_skel.rodata_mut().max_args = opts.max_args;
+    open_skel.rodata_mut().ignore_failed = opts.ignore_failed;
 
     // Begin tracing
     let mut skel = open_skel.load()?;
