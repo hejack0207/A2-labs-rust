@@ -18,6 +18,8 @@
 ## debug
 * [rdbg](https://github.com/starfleetcadet75/rdbg)
 * [rd](https://github.com/sidkshatriya/rd)
+* [cargo-rr](https://github.com/dzfranklin/cargo-rr)
+* [bugstalker](https://github.com/godzie44/BugStalker)
 * [stack-graphs](https://github.com/github/stack-graphs)
 * [firedbg.for.rust](https://github.com/SeaQL/FireDBG.for.Rust)
 
