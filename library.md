@@ -3,6 +3,7 @@
 * [rust-ptrace](https://github.com/codius-deprecated/rust-ptrace)
 
 # elf
+* [gimli](https://github.com/gimli-rs/glimli)
 * [rust-elf](https://github.com/cole14/rust-elf)
 
 # networking
