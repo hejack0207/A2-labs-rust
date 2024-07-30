@@ -1,0 +1,10 @@
+[package]
+name = "dw"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+clap = "4.5.11"
+env_logger = "0.11.5"
+gimli = "0.31.0"
+log = "0.4.22"
