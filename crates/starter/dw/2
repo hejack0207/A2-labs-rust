@@ -1,0 +1,472 @@
+#! /usr/bin/env drgn
+
+import argparse
+from collections import defaultdict
+import sys
+
+class reference:
+    # CODES: markdown/lang-rust/rust-lang-reference/src
+    docs = [
+        'SUMMARY.md',
+
+        'introduction.md',
+
+        'lexical-structure.md',
+        'input-format.md',
+        'keywords.md', # `dyn`
+        'comments.md',
+        'tokens.md',
+
+        'macros.md',
+        'macros-by-example.md',
+        'procedural-macros.md',
+
+        'crates-and-source-files.md',
+        'conditional-compilation.md',
+
+        'items.md',
+        'items/modules.md',
+        'items/extern-crates.md',
+        'items/use-declarations.md',
+        'items/functions.md',
+        'items/structs.md',
+        'items/constant-items.md',
+        'items/static-items.md',
+        'items/traits.md',
+        'items/implementations.md',
+
+        'attributes.md',
+        'attributes/testing.md',
+        'attributes/derive.md',
+        'attributes/diagnostics.md',
+        'attributes/codegen.md',
+        'attributes/limits.md',
+        'attributes/type_system.md',
+        'attributes/debugger.md',
+
+        'statements-and-expressions.md',
+        'statements.md',
+        'expressions.md',
+        'expressions/literal-expr.md',
+        'expressions/path-expr.md',
+        'expressions/block-expr.md',
+        'expressions/closure-expr.md',
+        'expressions/loop-expr.md',
+
+        'type-system.md',
+        'types.md',
+        'types/struct.md',
+        'types/closure.md',
+        'types/pointer.md',
+        'types/trait-object.md',
+        'destructors.md',
+
+        'special-types-and-traits.md',
+
+        'names.md',
+        'names/namespaces.md',
+        'names/scopes.md',
+        'names/preludes.md',
+        'paths.md',
+        'names/name-resolution.md',
+        'visibility-and-privacy.md',
+
+        'memory-model.md',
+        'memory-allocation-and-lifetime.md',
+        'variables.md',
+
+        'linkage.md',
+
+        'abi.md',
+
+        'runtime.md',
+
+        'appendices.md',
+        'macro-ambiguity.md',
+        'influences.md',
+    ]
+
+class book:
+    # CODES: markdown/lang-rust/rust-lang-book/src
+    docs = [
+        'SUMMARY.md',
+
+        # get started
+        'ch03-00-common-programming-concepts.md',
+        'ch03-01-variables-and-mutability.md',
+        'ch03-02-data-types.md',
+        'ch03-03-how-functions-work.md',
+        'ch03-04-comments.md',
+        'ch03-05-control-flow.md',
+
+        'ch04-00-understanding-ownership.md',
+        'ch04-01-what-is-ownership.md',
+        'ch04-02-references-and-borrowing.md',
+        'ch04-03-slices.md',
+
+        # basic rust literacy
+        'ch07-00-managing-growing-projects-with-packages-crates-and-modules.md',
+        'ch07-01-packages-and-crates.md',
+        'ch07-02-defining-modules-to-control-scope-and-privacy.md',
+        'ch07-03-paths-for-referring-to-an-item-in-the-module-tree.md',
+        'ch07-04-bringing-paths-into-scope-with-the-use-keyword.md',
+        'ch07-05-separating-modules-into-different-files.md',
+
+        'ch08-00-common-collections.md',
+        'ch08-01-vectors.md',
+        'ch08-02-strings.md',
+        'ch08-03-hash-maps.md',
+
+        'ch09-00-error-handling.md',
+        'ch09-01-unrecoverable-errors-with-panic.md',
+        'ch09-02-recoverable-errors-with-result.md',
+        'ch09-03-to-panic-or-not-to-panic.md',
+
+        'ch10-00-generics.md',
+        'ch10-01-syntax.md',
+        'ch10-02-traits.md',
+        'ch10-03-lifetime-syntax.md',
+
+        'ch11-00-testing.md',
+        'ch11-01-writing-tests.md',
+        'ch11-02-running-tests.md',
+        'ch11-03-test-organization.md',
+
+        # thinking in rust
+        'ch13-00-functional-features.md',
+        'ch13-01-closures.md',
+        'ch13-02-iterators.md',
+        'ch13-03-improving-our-io-project.md',
+        'ch13-04-performance.md',
+
+        'ch14-00-more-about-cargo.md',
+        'ch14-01-release-profiles.md',
+        'ch14-02-publishing-to-crates-io.md',
+        'ch14-03-cargo-workspaces.md',
+        'ch14-04-installing-binaries.md',
+        'ch14-05-extending-cargo.md',
+
+        'ch15-00-smart-pointers.md',
+        'ch15-01-box.md',
+        'ch15-02-deref.md',
+        'ch15-03-drop.md',
+        'ch15-04-rc.md',
+        'ch15-05-interior-mutability.md',
+        'ch15-06-reference-cycles.md',
+
+        'ch16-01-threads.md',
+        'ch16-02-message-passing.md',
+        'ch16-03-shared-state.md',
+        'ch16-04-extensible-concurrency-sync-and-send.md',
+
+        'ch17-00-oop.md',
+        'ch17-01-what-is-oo.md',
+        'ch17-02-trait-objects.md',
+        'ch17-03-oo-design-patterns.md',
+
+        # advanced topics
+        'ch18-00-patterns.md',
+        'ch18-01-all-the-places-for-patterns.md',
+        'ch18-02-refutability.md',
+        'ch18-03-pattern-syntax.md',
+
+        'ch19-00-advanced-features.md',
+        'ch19-01-unsafe-rust.md', # ffi
+        'ch19-03-advanced-traits.md',
+        'ch19-04-advanced-types.md',
+        'ch19-05-advanced-functions-and-closures.md',
+        'ch19-06-macros.md',
+
+        'ch20-00-final-project-a-web-server.md',
+        'ch20-01-single-threaded.md',
+        'ch20-02-multithreaded.md',
+        'ch20-03-graceful-shutdown-and-cleanup.md',
+
+        '../redirects/ffi.md',
+    ]
+
+class rfcs:
+    # CODES: markdown/lang-rust/rust-rfcs
+    docs = [
+        'README.md',
+
+        'text/0114-closures.md',
+        'text/1860-manually-drop.md',
+    ]
+
+class cargo:
+    # CODES: rust/lang-rust/cargo/src/doc
+    docs = [
+        'README.md',
+        # CODES: rust/lang-rust/cargo/src/doc/src
+        'SUMMARY.md',
+
+        'guide/index.md',
+
+        'reference/index.md',
+        'reference/manifest.md',
+        'reference/cargo-targets.md',
+        'reference/specifying-dependencies.md',
+        'reference/workspaces.md',
+        'reference/features.md',
+        'reference/profiles.md',
+        'reference/config.md',
+        'reference/environment-variables.md',
+        'reference/build-scripts.md',
+        'reference/unstable.md',
+
+        'commands/index.md',
+    ]
+
+class rust:
+    # CODES: rust/lang-rust/rust
+    docs = [
+        'README.md',
+        'src/doc/rustc/src/SUMMARY.md',
+    ]
+
+    sources = [
+        'src/etc/gdb_load_rust_pretty_printers.py',
+        'src/etc/gdb_lookup.py',
+        'src/etc/gdb_providers.py',
+    ]
+
+    traits = [
+        'Drop@library/core/src/ops/drop.rs',
+        'Send@library/core/src/marker.rs',
+        'enum:Result@library/core/src/result.rs',
+    ]
+
+    structs = [
+        'RefCell',
+        'std::ops::FnOnce',
+        'core::mem::ManuallyDrop',
+    ]
+
+    class rust_analyzer:
+        # CODES: rust/lang-rust/rust/src/tools/rust-analyzer
+        docs = [
+            'docs/user/manual.adoc',
+            'docs/user/generated_config.adoc',
+            'docs/dev/README.md',
+        ]
+
+        sources = [
+            'crates/rust-analyzer/src/bin/main.rs',
+        ]
+
+class rusty_man:
+    # CODES: rust/lang-rust/rusty-man
+    items = [
+        'DirSource::find_doc_html',
+        'DirSource::get_item',
+    ]
+
+class awesome:
+    # CODES: markdown/lang-rust/awesome-rust
+    docs = [
+        'README.md',
+    ]
+
+# code of mine
+class labs_rust:
+    # CODES: collection/A3-labs-rust
+    files = [
+        'README.md',
+        'dev.md',
+        'library.md',
+    ]
+
+class ebpf:
+    # CODES: ~/.oh-my-zsh/plugins/lang-rust/labs/ebpf
+    runqslower = [
+        'Cargo.toml',
+        'runqslower/src/main.rs',
+        'runqslower/src/bpf/runqslower.skel.rs',
+    ]
+
+    execsnoop = [
+        'execsnoop/Cargo.toml',
+        'execsnoop/src/main.rs',
+        'execsnoop/src/bpf/runqslower.skel.rs',
+    ]
+
+class sloc:
+    # CODES: rust/textprocess/sloc
+    items = [
+        'Cargo.toml',
+        'main@src/main.rs',
+    ]
+
+# project
+class bugstalker:
+    # CODES: rust/debugger/bugstalker
+    files = [
+        'Cargo.toml',
+        'src/main.rs',
+    ]
+
+    items = [
+        'TerminalApplication::run',
+    ]
+
+# library
+class clap:
+    # CODES: rust/library-rust/clap-v4.5.11
+    files = [
+        'CHANGELOG.md',
+        'Cargo.toml',
+        'clap_builder/src/lib.rs',
+    ]
+
+    macros = [
+        'arg!',
+    ]
+
+class gimli:
+    # CODES: rust/library-rust/gimli
+    files = [
+        'Cargo.toml',
+        'src/read/mod.rs',
+    ]
+
+    class dwarfdump:
+        files = [
+            'main@crates/examples/src/bin/dwarfdump.rs',
+            'dump_file@crates/examples/src/bin/dwarfdump.rs',
+
+            'dump_info@crates/examples/src/bin/dwarfdump.rs',
+            'dump_unit@crates/examples/src/bin/dwarfdump.rs',
+            'dump_entries@crates/examples/src/bin/dwarfdump.rs',
+            'dump_attr_value@crates/examples/src/bin/dwarfdump.rs',
+
+            'dump_types@crates/examples/src/bin/dwarfdump.rs',
+
+            'dump_line@crates/examples/src/bin/dwarfdump.rs',
+            'dump_line_program@crates/examples/src/bin/dwarfdump.rs',
+
+            's:DebugPubNames',
+            'E:DebugPubNames',
+            'dump_pubnames@crates/examples/src/bin/dwarfdump.rs',
+
+            's:DebugAranges',
+            'E:DebugAranges',
+            'dump_aranges@crates/examples/src/bin/dwarfdump.rs',
+
+            's:DebugPubTypes',
+            'E:DebugPubTypes',
+            'dump_pubtypes@crates/examples/src/bin/dwarfdump.rs',
+        ]
+
+        types = [
+            'DwTag',
+            'e:AttributeValue@read/unit.rs',
+        ]
+
+    class ddbug:
+        # CODES: rust/sys-debug/ddbug
+        src = [
+            'README.md',
+        ]
+
+class libusb_rs:
+    # CODES: rust/library-rust/libusb-rs
+
+    items = [
+        'version@src/version.rs', # libusb_get_version
+        'new@src/context.rs', # libusb_init
+        'drop@src/context.rs', # libusb_exit
+        'examples/libusb_info.rs',
+
+        'devices@src/context.rs',
+        'drop@src/device_list.rs', # libusb_free_device_list
+        'iter@src/device_list.rs',
+        'next@src/device_list.rs',
+        'from_libusb@src/device.rs', # libusb_ref_device
+        'drop@src/device.rs', # libusb_unref_device
+        'device_descriptor@src/device.rs', # libusb_get_device_descriptor
+        'from_libusb@src/device_descriptor.rs', # libusb_get_device_descriptor
+        'open@src/device.rs', # libusb_open
+        'read_control@src/device_handle.rs', # libusb_control_transfer
+        'examples/list_devices.rs',
+    ]
+
+class rust_rdkafka:
+    # CODES: rust/library-rust/rust-rdkafka
+    docs = [
+        'rdkafka-sys/librdkafka/INTRODUCTION.md',
+    ]
+
+    apis = [
+        'rdkafka-sys/librdkafka/src/rdkafka.h',
+        'rdkafka-sys/librdkafka/src-cpp/rdkafkacpp.h',
+    ]
+
+    rdkafka_sys = [
+        'rd_kafka_conf_set_consume_cb@rdkafka-sys/src/bindings.rs',
+        'rd_kafka_consume_callback@rdkafka-sys/src/bindings.rs',
+        'rd_kafka_conf_set_dr_msg_cb@rdkafka-sys/src/bindings.rs',
+    ]
+
+    items = [
+        # 'rd_kafka_conf_t', 'rd_kafka_conf_new', 'rd_kafka_conf_destroy'
+        'NativeClientConfig@src/config.rs',
+
+        # 'rd_kafka_t', 'rd_kafka_new', 'rd_kafka_destroy'
+        'new_context_arc@src/client.rs', 'Client@src/client.rs', 'NativeClient@src/client.rs',
+        'new@src/client.rs',
+        'new@src/consumer/base_consumer.rs',
+        'from_config_and_context@src/consumer/base_consumer.rs', # 'create_native_config@src/config.rs',
+        'examples/simple_consumer.rs',
+
+        'poll@src/consumer/base_consumer.rs',
+
+        'BaseProducer@src/producer/base_producer.rs',
+        'poll@src/producer/base_producer.rs',
+        'ThreadedProducer@src/producer/base_producer.rs',
+    ]
+
+class libbpf_rs:
+    # CODES: rust/library-rust/libbpf-rs
+    files = [
+        'Cargo.toml',
+        'libbpf-rs/Cargo.toml',
+        'examples/runqslower/Cargo.toml',
+        'examples/runqslower/src/main.rs',
+    ]
+
+    items = [
+        'Program@libbpf-rs/src/program.rs',
+    ]
+
+    libbpf_cargo = [
+        'libbpf-cargo/Cargo.toml',
+        'SkeletonBuilder@libbpf-cargo/src/lib.rs',
+        'generate@libbpf-cargo/src/lib.rs',
+        'gen_skel_contents@libbpf-cargo/src/gen/mod.rs',
+    ]
+
+    # CODES: rust/library-rust/libbpf-rs-v0.23.3
+    libbpf_cargo = [
+        'gen_skel_contents@libbpf-cargo/src/gen/mod.rs',
+    ]
+
+# references
+class wachy:
+    # CODES: rust/sys-ebpf/wachy
+    files = [
+        'Cargo.toml',
+        'src/main.rs',
+    ]
+
+class gitui:
+    # CODES: rust/dev-git/gitui
+    files = [
+        'Cargo.toml',
+        'main@src/main.rs',
+        'start_terminal@src/main.rs',
+        'run_app@src/main.rs',
+
+        'draw@src/app.rs',
+    ]
+
