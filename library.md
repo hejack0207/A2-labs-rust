@@ -22,13 +22,8 @@
 * [clap](https://github.com/clap-rs/clap)
 
 # ui
-* [termion](https://github.com/redox-os/termion)
-* [pancurses](https://github.com/ihalila/pancurses)
-* [pdcurses-sys](https://github.com/ihalila/pdcurses-sys)
-* [ncurses-rs](https://github.com/jeaye/ncurses-rs)
-* [crossterm](https://github.com/crossterm-rs/crossterm)
-* [rustbox](https://github.com/gchp/rustbox)
-* [indicatif](https://github.com/mitsuhiko/indicatif)
+* [rustyline](https://github.com/kkawakam/rustyline)
+* [ratatui](https://github.com/ratatui-org/ratatui)
 
 # commons
 * [log](https://github.com/rust-lang/log)

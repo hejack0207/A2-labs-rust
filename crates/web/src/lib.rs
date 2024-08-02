@@ -1,10 +1,11 @@
 pub mod ue_sim_api;
 
-use std::mem;
-use ue_sim_api::model_config_request;
+mod kafka;
+mod web;
 
-pub fn model_config()->String{
-    let mut request : *mut model_config_request  = unsafe { mem::uninitialized() };
-    unsafe { ue_sim_api::on_model_config(request) };
-    "".to_string()
-}
+pub use web::{
+    model_config,
+    model_config_request,
+};
+
+pub use kafka::*;

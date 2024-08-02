@@ -42,8 +42,6 @@ fn main() {
 
 #[cfg(not(feature = "cmake-build"))]
 fn build_ue() {
-    let mut configure_flags: Vec<String> = Vec::new();
-
     let mut cflags = Vec::new();
     if let Ok(var) = env::var("CFLAGS") {
         cflags.push(var);
@@ -60,8 +58,8 @@ fn build_ue() {
     let out_dir = env::var("OUT_DIR").expect("OUT_DIR missing");
 
     if !Path::new(&out_dir).join("LICENSE").exists() {
-        println!("Cloning ue");
-        run_command_or_fail(".", "cp", &["-a", "ue/.", &out_dir]);
+        println!("Copying ue");
+        run_command_or_fail(".", "cp", &["-aL", "ue/.", &out_dir]);
     }
 
     println!("Compiling ue");

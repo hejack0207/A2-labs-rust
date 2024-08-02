@@ -1,7 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
 #include "ue-sim-api.h"
+#include "sim-api.h"
 
 int on_model_init(model_init_request* p_model_init_request){
 	return 0;
@@ -26,8 +28,3 @@ int on_sim_env(sim_env* p_sim_control){
 	return 0;
 }
 
-/** int main(int argc, char *argv[]) */
-/** { */
-/**         printf("started!"); */
-/**         return 0; */
-/** } */

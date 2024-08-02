@@ -7,6 +7,7 @@ links = "ue"
 
 [lib]
 name = "uesim"
+crate-type = ["cdylib", "rlib", "staticlib"]
 
 [[bin]]
 name = "web"
