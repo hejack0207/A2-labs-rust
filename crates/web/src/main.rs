@@ -13,14 +13,14 @@ use axum::{
     extract,
 };
 
-use serde::Deserialize;
+// use serde::Deserialize;
 
 
-#[derive(Deserialize)]
-struct IfInfo {
-    ifindex: u16,
-    ifname: String,
-}
+// #[derive(Deserialize)]
+// struct IfInfo {
+//     ifindex: u16,
+//     ifname: String,
+// }
 
 use uesim::{
     ue_sim_api::{
@@ -41,8 +41,10 @@ async fn main() {
     axum::serve(listener, app).await.unwrap();
 }
 
-async fn web_model_init(extract::Json(payload): extract::Json<IfInfo>)->Result<String, StatusCode>{
-    // on_model_init();
+async fn web_model_init(extract::Json(payload): extract::Json<model_init_request >)->Result<String, StatusCode>{
+    unsafe {
+        on_model_init(payload);
+    }
     Ok("".to_string())
 }
 
