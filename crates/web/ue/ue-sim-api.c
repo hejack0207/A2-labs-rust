@@ -6,6 +6,8 @@
 #include "sim-api.h"
 
 int on_model_init(model_init_request* p_model_init_request){
+        printf("simulationId: %s\n", p_model_init_request->header.simulationId);
+        printf("sceneObjectId: %s\n", p_model_init_request->header.sceneObjectId);
 	return 0;
 }
 
