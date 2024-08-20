@@ -185,7 +185,6 @@ async fn web_model_init(Json(payload): Json<model_init_request>)->Result<String,
         on_model_init(std::ptr::addr_of_mut!(request));
     }
     Ok("200".to_string())
-}
 
 async fn web_model_config()->Result<String, StatusCode>{
     Ok(model_config())
