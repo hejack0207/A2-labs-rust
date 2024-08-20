@@ -10,7 +10,8 @@ use axum::{
 
 
 use std::ffi::CString;
-
+#[allow(unused_imports)]
+use std::mem;
 
 #[allow(non_snake_case, non_camel_case_types)]
 #[allow(dead_code)]
@@ -58,29 +59,23 @@ mod model{
         pub altitude: u32,
     }
 
-    pub const CONTROL_TYPE_START: CONTROL_TYPE = 1;
-    pub const CONTROL_TYPE_PAUSE: CONTROL_TYPE = 2;
-    pub const CONTROL_TYPE_RESUME: CONTROL_TYPE = 3;
-    pub const CONTROL_TYPE_DOUBLESPEED: CONTROL_TYPE = 4;
-    pub const CONTROL_TYPE_STOP: CONTROL_TYPE = 5;
-    #[doc = " kafka 消息"]
-    pub type CONTROL_TYPE = ::std::os::raw::c_uint;
-
-    #[derive(Deserialize)]
-    pub struct sim_control {
-        pub header: sim_msg_header,
-        pub sceneObjectId: String,
-        pub simulationTime: ::std::os::raw::c_long,
-        pub controlType: u8,
-        pub speed: u8,
-    }
-
     #[derive(Deserialize)]
     pub struct model_config_params {
         pub optType: u8,
         pub capacity: u32,
         pub serviceAddr: String,
         pub phoneNum: String,
+    }
+
+    impl Default for model_config_params {
+        fn default() -> Self {
+            return Self{
+                optType: u8::MAX,
+                capacity: u32::MAX,
+                serviceAddr: "".to_string(),
+                phoneNum: "".to_string(),
+            }
+        }
     }
 
     #[derive(Deserialize)]
@@ -90,28 +85,36 @@ mod model{
         pub outOfSync: u8,
     }
 
+    impl Default for model_simfault_params {
+        fn default() -> Self {
+            return Self{
+                simFault: u8::MAX,
+                startError: u8::MAX,
+                outOfSync: u8::MAX,
+            }
+        }
+    }
+
+    type ConfigOrSimfault = ::std::os::raw::c_int;
+
     #[derive(Deserialize)]
     pub struct model_config_request {
         pub header: sim_msg_header,
-        // pub __bindgen_anon_1: model_config_request__bindgen_ty_1,
-        pub configOrSimfault: ::std::os::raw::c_int,
+        #[serde(skip)]
+        pub configOrSimfault: ConfigOrSimfault,
+        #[serde(default, rename="config")]
+        pub configParams: model_config_params,
+        #[serde(default, rename="simfault")]
+        pub simfaultParams: model_simfault_params,
     }
-
-    // #[derive(Deserialize)]
-    // pub union model_config_request__bindgen_ty_1 {
-    //     pub configParams: model_config_params,
-    //     pub simfaultParams: model_simfault_params,
-    // }
 }
 
 use model::*;
 
-use uesim::{
-    ue_sim_api::{
+use uesim::ue_sim_api::{
         on_model_init,
-    },
-    model_config,
-};
+        on_model_config,
+    };
 
 #[tokio::main]
 async fn main() {
@@ -145,7 +148,6 @@ fn get_last_n_elements<const N: usize>(vec: &Vec<u8>) -> [i8; N] {
 }
 
 async fn web_model_init(Json(payload): Json<model_init_request>)->Result<String, StatusCode>{
-    println!("web_model_init");
     let mut request :uesim::ue_sim_api::model_init_request = uesim::ue_sim_api::model_init_request{
         header: uesim::ue_sim_api::sim_msg_header {
             simulationId: CString::new(payload.header.simulationId).expect("should be converted to c string").into_raw(),
@@ -185,7 +187,48 @@ async fn web_model_init(Json(payload): Json<model_init_request>)->Result<String,
         on_model_init(std::ptr::addr_of_mut!(request));
     }
     Ok("200".to_string())
+}
 
-async fn web_model_config()->Result<String, StatusCode>{
-    Ok(model_config())
+async fn web_model_config(Json(payload): Json<model_config_request>)->Result<String, StatusCode>{
+    // let mut request : *mut uesim::ue_sim_api::model_config_request  = unsafe { mem::uninitialized() };
+
+    let mut request :uesim::ue_sim_api::model_config_request;
+    if payload.configParams.optType != u8::MAX {
+        request = uesim::ue_sim_api::model_config_request{
+            header: uesim::ue_sim_api::sim_msg_header {
+                simulationId: CString::new(payload.header.simulationId).expect("should be converted to c string").into_raw(),
+                sceneObjectId:  CString::new(payload.header.sceneObjectId).expect("should be converted to c string").into_raw(),
+                simulationTime: payload.header.simulationTime,
+                timestamp: payload.header.timestamp,
+            },
+            configOrSimfault: 1,
+            __bindgen_anon_1: uesim::ue_sim_api::model_config_request__bindgen_ty_1{
+                configParams: uesim::ue_sim_api::model_config_params{
+                    optType: payload.configParams.optType,
+                    capacity: payload.configParams.capacity,
+                    serviceAddr: CString::new(payload.configParams.serviceAddr).expect("should be converted to c string").into_raw(),
+                    phoneNum: CString::new(payload.configParams.phoneNum).expect("should be converted to c string").into_raw(),
+                },
+            },
+        };
+    }else{
+        request = uesim::ue_sim_api::model_config_request{
+            header: uesim::ue_sim_api::sim_msg_header {
+                simulationId: CString::new(payload.header.simulationId).expect("should be converted to c string").into_raw(),
+                sceneObjectId:  CString::new(payload.header.sceneObjectId).expect("should be converted to c string").into_raw(),
+                simulationTime: payload.header.simulationTime,
+                timestamp: payload.header.timestamp,
+            },
+            configOrSimfault: 0,
+            __bindgen_anon_1: uesim::ue_sim_api::model_config_request__bindgen_ty_1{
+                simfaultParams: uesim::ue_sim_api::model_simfault_params{
+                    simFault: payload.simfaultParams.simFault,
+                    startError: payload.simfaultParams.startError,
+                    outOfSync: payload.simfaultParams.outOfSync,
+                },
+            },
+        };
+    }
+    unsafe { on_model_config(std::ptr::addr_of_mut!(request)) };
+    Ok("200".to_string())
 }

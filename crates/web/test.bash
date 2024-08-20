@@ -77,7 +77,7 @@ EOI
 }
 
 @test "on model config" {
-	skip
+	# skip
 	rand20=$(openssl rand -hex 10)
 	rand32=$(openssl rand -hex 16)
 	curtime=$(date +'%Y-%m-%d %H:%M:%S')
@@ -86,8 +86,8 @@ EOI
 	"header": {
 		"simulationId": "$rand20",
 		"sceneObjectId": "$curtime",
-		"simulationTime": "1111",
-		"timeStamp": "2222"
+		"simulationTime": 1111,
+		"timestamp": 2222
 	},
 	"body": {
 		"optType": 1,
