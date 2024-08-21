@@ -94,10 +94,13 @@ typedef struct {
 extern "C" {
 #endif
 
+/// <div rustbindgen hide></div>
 int send_sim_status_reply(sim_status_reply* p_sim_status_reply);
 
+/// <div rustbindgen hide></div>
 int send_sim_status_data(sim_status_data* p_sim_status_data);
 
+/// <div rustbindgen hide></div>
 int send_running_log(sim_running_log* p_sim_running_log);
 
 int send_model_event(sim_model_event* p_sim_model_event);

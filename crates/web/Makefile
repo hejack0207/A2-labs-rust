@@ -7,10 +7,11 @@ src/ue_sim_api.rs: src/ue-sim-api.h
 all: test
 test:
 	-pkill web
+	-rm core.*
 	cargo build
 	cargo run &
 	sleep 3s
 	./test.bash
 
-src/kafka.rs: src/sim-api.h
+src/kafka-bindings.rs: src/sim-api.h
 	bindgen --no-layout-tests $^ -o $@

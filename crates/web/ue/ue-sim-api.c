@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <string.h>
 
 #include "ue-sim-api.h"
 #include "sim-api.h"
@@ -17,9 +18,22 @@ int on_model_config(model_config_request* p_business_control_request){
 	printf("simulationId=%s\n",p_business_control_request->header.simulationId);
 
         sim_status_reply *reply = calloc(1, sizeof(sim_status_reply));
-        reply->status = 0;
-        reply->containerId = "uesim";
-        send_sim_status_reply(reply);
+        if (reply != NULL) {
+            reply->status = 0;
+            reply->containerId = "uesim";
+            reply->containerIp = "192.168.0.1";
+            reply->msg = "msg from C";
+            reply->port = 3333;
+            reply->header.simulationId = p_business_control_request->header.simulationId;
+            reply->header.sceneObjectId = p_business_control_request->header.sceneObjectId;
+            reply->header.simulationTime = p_business_control_request->header.simulationTime;
+            reply->header.timestamp = p_business_control_request->header.timestamp;
+            send_sim_status_reply(reply);
+
+            free(reply);
+        }else{
+            printf("calloc failed\n");
+        }
 
 	return 0;
 }
