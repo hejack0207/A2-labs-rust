@@ -1,0 +1,68 @@
+# SPDX-FileCopyrightText: 2019-2021 Robin Krahl <robin.krahl@ireas.org>
+# SPDX-License-Identifier: CC0-1.0
+
+[package]
+name = "rusty-man"
+version = "0.5.0"
+authors = ["Robin Krahl <robin.krahl@ireas.org>"]
+edition = "2018"
+description = "Command-line viewer for rustdoc documentation"
+homepage = "https://sr.ht/~ireas/rusty-man"
+repository = "https://git.sr.ht/~ireas/rusty-man"
+keywords = ["doc", "cli", "rustdoc"]
+categories = ["command-line-utilities", "development-tools"]
+readme = "README.md"
+license = "MIT"
+exclude = [".builds/*", "tests/html/*", "tests/snapshots/*"]
+
+[dependencies]
+anyhow = "1.0.31"
+cursive_buffered_backend = "0.5"
+cursive-markup = "0.2"
+html2text = "0.2.1"
+kuchiki = "0.8.0"
+log = "0.4.11"
+markup5ever = "0.10.0"
+merge = "0.1.0"
+pager = "0.16.0"
+serde_json = "1.0.56"
+serde_tuple = "0.5.0"
+termion = "1.5"
+toml = "0.5.6"
+url = "2.1.1"
+webbrowser = "0.5.5"
+xdg = "2.2.0"
+open = "4.1.0"
+
+[dependencies.cursive]
+version = "0.16"
+default-features = false
+features = ["termion-backend"]
+
+[dependencies.env_logger]
+version = "0.8.0"
+default-features = false
+
+[dependencies.serde]
+version = "1.0.114"
+features = ["derive"]
+
+[dependencies.structopt]
+version = "0.3.15"
+default-features = false
+
+[dependencies.syntect]
+version = "4.3.0"
+default-features = false
+features = ["parsing", "regex-onig", "assets", "dump-load"]
+
+[dependencies.text-style]
+version = "0.3.0"
+features = ["cursive", "syntect", "termion"]
+
+[dev-dependencies]
+assert_cmd = "1.0.1"
+insta = "1"
+rustc_version = "0.4.0"
+semver = "1"
+tempfile = "3.1.0"

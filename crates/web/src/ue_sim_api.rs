@@ -96,15 +96,6 @@ pub const WINT_MIN: u32 = 0;
 pub const WINT_MAX: u32 = 4294967295;
 pub const TSFMT: &[u8; 24] = b"yyyy-MM-dd HH:mm:ss.SSS\0";
 pub const UNDEF: u32 = 100;
-pub const EVENT_TYPE_SUC_CONN: &[u8; 3] = b"01\0";
-pub const EVENT_TYPE_FAI_CONN: &[u8; 3] = b"02\0";
-pub const EVENT_TYPE_DISCNTD: &[u8; 3] = b"03\0";
-pub const EVENT_TYPE_STG_SWITCH: &[u8; 3] = b"04\0";
-pub const EVENT_TYPE_SWTCH_OK: &[u8; 3] = b"05\0";
-pub const EVENT_TYPE_SWTCH_FAIL: &[u8; 3] = b"06\0";
-pub const EVENT_TYPE_STG_REBUILD: &[u8; 3] = b"07\0";
-pub const EVENT_TYPE_REBUIL_OK: &[u8; 3] = b"08\0";
-pub const EVENT_TYPE_REBUIL_FAIL: &[u8; 3] = b"09\0";
 pub type __u_char = ::std::os::raw::c_uchar;
 pub type __u_short = ::std::os::raw::c_ushort;
 pub type __u_int = ::std::os::raw::c_uint;
@@ -283,55 +274,6 @@ pub union model_config_request__bindgen_ty_1 {
 pub struct sim_env {
     pub header: sim_msg_header,
 }
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct sim_status_reply {
-    pub header: sim_msg_header,
-    pub status: i8,
-    pub msg: *mut ::std::os::raw::c_char,
-    pub containerId: *mut ::std::os::raw::c_char,
-    pub containerIp: *mut ::std::os::raw::c_char,
-    pub port: i16,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct sim_status_data {
-    pub header: sim_msg_header,
-    pub sceneObjectId: *mut ::std::os::raw::c_char,
-    pub simulationTime: ::std::os::raw::c_long,
-    pub rrcLinkStatus: u8,
-    pub dlSpeed: u32,
-    pub ulSpeed: u32,
-    pub timeDelay: u32,
-    pub plmn: *mut ::std::os::raw::c_char,
-    pub ueIp: *mut ::std::os::raw::c_char,
-    pub ueId: *mut ::std::os::raw::c_char,
-    pub optType: i8,
-}
-pub const SIM_LOG_LEVEL_FATAL: SIM_LOG_LEVEL = 1;
-pub const SIM_LOG_LEVEL_ERROR: SIM_LOG_LEVEL = 2;
-pub const SIM_LOG_LEVEL_WARN: SIM_LOG_LEVEL = 3;
-pub const SIM_LOG_LEVEL_INFO: SIM_LOG_LEVEL = 4;
-pub type SIM_LOG_LEVEL = ::std::os::raw::c_uint;
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct sim_running_log {
-    pub header: sim_msg_header,
-    pub sceneObjectId: *mut ::std::os::raw::c_char,
-    pub simulationTime: ::std::os::raw::c_long,
-    pub logType: SIM_LOG_LEVEL,
-    pub logDomain: *mut ::std::os::raw::c_char,
-    pub logData: *mut ::std::os::raw::c_char,
-}
-#[repr(C)]
-#[derive(Debug, Copy, Clone)]
-pub struct sim_model_event {
-    pub header: sim_msg_header,
-    pub sceneObjectId: *mut ::std::os::raw::c_char,
-    pub simulationTime: ::std::os::raw::c_long,
-    pub eventType: *mut ::std::os::raw::c_char,
-    pub returnMean: *mut ::std::os::raw::c_char,
-}
 extern "C" {
     pub fn on_model_init(p_model_init_request: *mut model_init_request) -> ::std::os::raw::c_int;
 }
@@ -345,18 +287,4 @@ extern "C" {
 }
 extern "C" {
     pub fn on_sim_env(p_sim_control: *mut sim_env) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn send_sim_status_reply(
-        p_sim_status_reply: *mut sim_status_reply,
-    ) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn send_sim_status_data(p_sim_status_data: *mut sim_status_data) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn send_running_log(p_sim_running_log: *mut sim_running_log) -> ::std::os::raw::c_int;
-}
-extern "C" {
-    pub fn send_model_event(p_sim_model_event: *mut sim_model_event) -> ::std::os::raw::c_int;
 }

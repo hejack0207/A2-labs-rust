@@ -7,6 +7,7 @@ links = "ue"
 
 [lib]
 name = "uesim"
+crate-type = ["cdylib", "rlib", "staticlib"]
 
 [[bin]]
 name = "web"
@@ -15,6 +16,8 @@ path = "src/main.rs"
 [dependencies]
 axum = "0.7.5"
 kafka = "0.10.0"
+rdkafka = "0.36.2"
 # libc = "0.2"
 serde = { version = "1.0.203", features = ["derive", "serde_derive"] }
+serde_with = "3.9.0"
 tokio = { version = "1.38.0", features = ["macros", "rt-multi-thread"] }
