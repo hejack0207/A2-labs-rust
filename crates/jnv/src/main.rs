@@ -183,7 +183,14 @@ fn deserialize_json(
     results.map_err(anyhow::Error::from)
 }
 
+#[macro_use]
+extern crate log;
+
+use simplelog::*;
+
 fn main() -> Result<()> {
+    WriteLogger::init(LevelFilter::Debug, Config::default(), File::create("/tmp/jnv").unwrap()).unwrap();
+
     let args = Args::parse();
 
     let input = parse_input(&args)?;

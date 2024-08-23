@@ -19,6 +19,12 @@ impl FilterTrie {
             .get_ancestor(query)
             .and_then(|subtrie| subtrie.value())
     }
+
+    // pub fn prefix_search_with_key(&self, query: &str) -> Option<(Option<&String>, Option<&Vec<serde_json::Value>>)> {
+    //     self.0
+    //         .get_ancestor(query)
+    //         .and_then(|subtrie| Some((subtrie.key(), subtrie.value())))
+    // }
 }
 
 #[cfg(test)]

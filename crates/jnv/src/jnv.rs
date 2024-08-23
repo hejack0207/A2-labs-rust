@@ -108,6 +108,7 @@ pub struct Jnv {
 
     json_expand_depth: Option<usize>,
     no_hint: bool,
+    prefix: String,
 }
 
 impl Jnv {
@@ -182,6 +183,7 @@ impl Jnv {
                 json_expand_depth,
                 no_hint,
                 input_stream,
+                prefix: "".to_string(),
             },
         })
     }
@@ -245,6 +247,41 @@ impl Jnv {
                 .to_string(),
             "Copied jq query to clipboard!",
         );
+    }
+
+    fn update_suggest(&mut self){
+        let all_kinds = self.json.stream.flatten_kinds();
+        self.suggest = Suggest::from_iter(all_kinds.iter().filter_map(|kind| kind.path()).map(
+            |segments| {
+                let candidate = if segments.is_empty() {
+                    ".".to_string()
+                } else {
+                    segments
+                        .iter()
+                        .enumerate()
+                        .map(|(i, segment)| match segment {
+                            JsonPathSegment::Key(key) => {
+                                if key.contains('.') || key.contains('-') || key.contains('@') {
+                                    format!(".\"{}\"", key)
+                                } else {
+                                    format!(".{}", key)
+                                }
+                            }
+                            JsonPathSegment::Index(index) => {
+                                if i == 0 {
+                                    format!(".[{}]", index)
+                                } else {
+                                    format!("[{}]", index)
+                                }
+                            }
+                        })
+                        .collect::<String>()
+                };
+                debug!("candidate: {}", candidate);
+                candidate
+            },
+        ));
+        debug!("all_kinds: {:?}", all_kinds);
     }
 }
 
