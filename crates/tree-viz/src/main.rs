@@ -24,6 +24,7 @@ fn main() {
         Some("python") => tree_sitter_python::language(),
         Some("ruby") => tree_sitter_ruby::language(),
         Some("markdown") => tree_sitter_md::language(),
+        Some("jq") => tree_sitter_jq::language(),
         Some(s) => panic!("invalid language passed: {s}"),
         None => panic!("no language passed"),
     };

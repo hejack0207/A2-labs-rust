@@ -250,6 +250,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "tree-sitter-jq"
+version = "0.0.1"
+dependencies = [
+ "cc",
+ "tree-sitter 0.21.0",
+]
+
+[[package]]
 name = "tree-sitter-json"
 version = "0.21.0"
 source = "git+https://github.com/tree-sitter/tree-sitter-json#94f5c527b2965465956c2000ed6134dd24daf2a7"
@@ -327,6 +335,7 @@ dependencies = [
  "tree-sitter-elm",
  "tree-sitter-go",
  "tree-sitter-javascript",
+ "tree-sitter-jq",
  "tree-sitter-json",
  "tree-sitter-md",
  "tree-sitter-mdx",

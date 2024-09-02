@@ -18,7 +18,7 @@ tree-sitter-mdx = { git = "https://github.com/jlopezcur/tree-sitter-mdx" }
 tree-sitter-json = { git = "https://github.com/tree-sitter/tree-sitter-json" }
 tree-sitter-python = "0.21"
 tree-sitter-md = "0.2.3"
-# tree-sitter-cobol = { path = "../../tree-sitter-cobol/" }
+tree-sitter-jq = { path = "tree-sitter-jq" }
 
 [dependencies.notify]
 version = "5.0.0"
