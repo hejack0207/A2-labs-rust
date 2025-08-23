@@ -1,4 +1,4 @@
-use regex_parser::{vim_regex, Converter, CONVERTER};
+use regex_style::{vim_regex, Converter, CONVERTER};
 use clap::{Arg,App};
 
 fn main() {
